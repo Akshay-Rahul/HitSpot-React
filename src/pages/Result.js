@@ -2,13 +2,15 @@ import React from "react";
 
 function Result({ score }) {
   const averageKillPerSecond = (score / 15).toFixed(2);
+
+  // Determine aim quality based on score
   let aimQuality;
-  if (score >= 20) {
-    aimQuality = <span style={{ color: "green" }}>God</span>;
-  } else if (score >= 15) {
+  if (score >= 10) {
+    aimQuality = <span style={{ color: "green" }}>Excellent</span>;
+  } else if (score >= 8) {
     aimQuality = <span style={{ color: "green" }}>Very Good</span>;
-  } else if (score >= 10) {
-    aimQuality = <span style={{ color: "orange" }}>Not Good Enough</span>;
+  } else if (score >= 6) {
+    aimQuality = <span style={{ color: "orange" }}>Good</span>;
   } else {
     aimQuality = <span style={{ color: "red" }}>Needs Improvement</span>;
   }
@@ -18,6 +20,7 @@ function Result({ score }) {
       <div>Your Score is {score}</div>
       <div>Average kills per second: {averageKillPerSecond}</div>
       <div>Your aim quality is {aimQuality}</div>
+      <div>Headshots: {score * 2}</div>
       <div>Accuracy: {(score / 20 * 100).toFixed(1)}%</div>
       <button
         className="start-button"
