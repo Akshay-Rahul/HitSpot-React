@@ -20,7 +20,6 @@ function Result({ score }) {
       <div>Your Score is {score}</div>
       <div>Average kills per second: {averageKillPerSecond}</div>
       <div>Your aim quality is {aimQuality}</div>
-      <div>Headshots: {score * 2}</div>
       <div>Accuracy: {(score / 20 * 100).toFixed(1)}%</div>
       <button
         className="start-button"
